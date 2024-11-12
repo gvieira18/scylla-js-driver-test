@@ -1,2 +1,5 @@
-// eslint-disable-next-line no-empty-function
-export default async () => {};
+import scylladb from './contexts/scylladb';
+
+export default async () => {
+  await scylladb.init();
+};

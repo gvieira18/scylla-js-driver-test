@@ -1,6 +1,6 @@
 {
   "name": "ts-node-archref",
-  "version": "0.0.53",
+  "version": "0.0.54",
   "description": "Maybe a reference architecture for NodeJS using Typescript",
   "private": true,
   "main": "dist/main.js",
@@ -27,6 +27,7 @@
     "email": "gabrielcarmovieira16@gmail.com"
   },
   "dependencies": {
+    "@lambda-group/scylladb": "0.7.1",
     "cross-env": "7.0.3",
     "dotenv": "16.4.5",
     "log4js": "6.9.1",
