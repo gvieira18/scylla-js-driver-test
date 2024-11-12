@@ -2,7 +2,7 @@ import type { Config } from 'jest';
 import { resolve } from 'node:path';
 
 const jestConfig: Config = {
-  bail: true,
+  bail: false,
   clearMocks: true,
   rootDir: resolve(__dirname),
   roots: ['<rootDir>'],
