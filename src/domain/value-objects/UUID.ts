@@ -37,14 +37,11 @@ class UuidValueObject {
   }
 
   addHyphens(): UuidValueObject {
-    return UuidValueObject.restore(
-      this.getValue().replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5')
-    );
+    return UuidValueObject.restore(this.getValue().replace(/^(.{8})(.{4})(.{4})(.{4})(.{12})$/, '$1-$2-$3-$4-$5'));
   }
 
   private static isValidUUID(uuid: string): boolean {
-    const uuidPatternWithHyphens =
-      /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
+    const uuidPatternWithHyphens = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/;
 
     const uuidPatternWithoutHyphens = /^[0-9a-fA-F]{32}$/;
 

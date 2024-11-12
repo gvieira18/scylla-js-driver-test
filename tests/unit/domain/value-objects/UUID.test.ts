@@ -50,26 +50,26 @@ describe('#equals', () => {
 
 describe('#toUpperCase', () => {
   it('should return a new UUID instance with all letter in upper case', () => {
-    expect(
-      UuidValueObject.restore('6725dcb4-abfa-41f8-8bf1-917ebe406234').toUpperCase().getValue()
-    ).toBe('6725DCB4-ABFA-41F8-8BF1-917EBE406234');
+    expect(UuidValueObject.restore('6725dcb4-abfa-41f8-8bf1-917ebe406234').toUpperCase().getValue()).toBe(
+      '6725DCB4-ABFA-41F8-8BF1-917EBE406234'
+    );
   });
 });
 
 describe('#toLowerCase', () => {
   it('should return a new UUID instance with all letter in lower case', () => {
-    expect(
-      UuidValueObject.restore('6725DCB4-ABFA-41F8-8BF1-917EBE406234').toLowerCase().getValue()
-    ).toBe('6725dcb4-abfa-41f8-8bf1-917ebe406234');
+    expect(UuidValueObject.restore('6725DCB4-ABFA-41F8-8BF1-917EBE406234').toLowerCase().getValue()).toBe(
+      '6725dcb4-abfa-41f8-8bf1-917ebe406234'
+    );
   });
 });
 
 describe('#removeDashes', () => {
   describe('success', () => {
     it('should remove hyphens and return UUID instance', () => {
-      expect(
-        UuidValueObject.restore('6ba7b810-9dad-11d1-80b4-00c04fd430c8').removeHyphens().getValue()
-      ).toBe('6ba7b8109dad11d180b400c04fd430c8');
+      expect(UuidValueObject.restore('6ba7b810-9dad-11d1-80b4-00c04fd430c8').removeHyphens().getValue()).toBe(
+        '6ba7b8109dad11d180b400c04fd430c8'
+      );
     });
   });
 
@@ -89,9 +89,9 @@ describe('#removeDashes', () => {
 describe('#addHyphens', () => {
   describe('success', () => {
     it('should add hyphens and return UUID instance', () => {
-      expect(
-        UuidValueObject.restore('6ba7b8109dad11d180b400c04fd430c8').addHyphens().getValue()
-      ).toBe('6ba7b810-9dad-11d1-80b4-00c04fd430c8');
+      expect(UuidValueObject.restore('6ba7b8109dad11d180b400c04fd430c8').addHyphens().getValue()).toBe(
+        '6ba7b810-9dad-11d1-80b4-00c04fd430c8'
+      );
     });
   });
 
@@ -99,10 +99,7 @@ describe('#addHyphens', () => {
     it.each(['6ba7b8109dad11d1', '6ba7b8109dad11d180b400c04fd430c800', 'xpto', '123-abc'])(
       `${ERROR_RESTORE} - %s`,
       (param) => {
-        expect(() => UuidValueObject.restore(param).addHyphens().getValue()).toThrowWithMessage(
-          Error,
-          ERROR_EXCEPTION
-        );
+        expect(() => UuidValueObject.restore(param).addHyphens().getValue()).toThrowWithMessage(Error, ERROR_EXCEPTION);
       }
     );
   });

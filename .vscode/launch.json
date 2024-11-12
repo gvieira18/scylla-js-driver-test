@@ -10,13 +10,7 @@
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
       "env": { "NODE_ENV": "development" },
-      "args": [
-        "--colors",
-        "--noStackTrace",
-        "--passWithNoTests",
-        "--runInBand",
-        "--config=jest.unit.ts"
-      ],
+      "args": ["--colors", "--noStackTrace", "--passWithNoTests", "--runInBand", "--config=jest.unit.ts"],
       "cwd": "${workspaceFolder}",
       "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": ["<node_internals>/**"],
@@ -30,13 +24,7 @@
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/.bin/jest",
-      "args": [
-        "--colors",
-        "--noStackTrace",
-        "--passWithNoTests",
-        "--runInBand",
-        "--config=jest.feature.ts"
-      ],
+      "args": ["--colors", "--noStackTrace", "--passWithNoTests", "--runInBand", "--config=jest.feature.ts"],
       "cwd": "${workspaceFolder}",
       "internalConsoleOptions": "openOnSessionStart",
       "skipFiles": ["<node_internals>/**"],
