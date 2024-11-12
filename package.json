@@ -1,12 +1,12 @@
 {
-  "name": "ts-node-archref",
-  "version": "0.0.56",
-  "description": "Maybe a reference architecture for NodeJS using Typescript",
+  "name": "@gvieira18/scylla-js-driver-test",
+  "version": "0.0.57",
+  "description": "NodeJS using Typescript",
   "private": true,
   "main": "dist/main.js",
   "license": "MIT",
   "engines": {
-    "node": "20"
+    "node": ">=20"
   },
   "scripts": {
     "dev": "npx -y cross-env NODE_ENV=development tsnd --inspect=0.0.0.0 --respawn --no-notify -T --ignore-watch node_modules -- src/main.ts",
@@ -25,6 +25,10 @@
   "author": {
     "name": "Gabriel do Carmo Vieira",
     "email": "gabrielcarmovieira16@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gvieira18/scylla-js-driver-test.git"
   },
   "dependencies": {
     "@lambda-group/scylladb": "0.7.1",
