@@ -1,0 +1,75 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "DEBUG: UNIT TESTS",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "env": { "NODE_ENV": "development" },
+      "args": [
+        "--colors",
+        "--noStackTrace",
+        "--passWithNoTests",
+        "--runInBand",
+        "--config=jest.unit.ts"
+      ],
+      "cwd": "${workspaceFolder}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "order": 1,
+        "group": "TESTS"
+      }
+    },
+    {
+      "name": "DEBUG: FEATURE TESTS",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": [
+        "--colors",
+        "--noStackTrace",
+        "--passWithNoTests",
+        "--runInBand",
+        "--config=jest.feature.ts"
+      ],
+      "cwd": "${workspaceFolder}",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "order": 2,
+        "group": "TESTS"
+      }
+    },
+    {
+      "name": "DEBUG: LOCAL",
+      "type": "node",
+      "request": "attach",
+      "restart": true,
+      "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "order": 1,
+        "group": "DOCKER"
+      }
+    },
+    {
+      "name": "DEBUG: DOCKER",
+      "type": "node",
+      "request": "attach",
+      "restart": true,
+      "port": 5000,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/usr/local/app",
+      "skipFiles": ["<node_internals>/**"],
+      "presentation": {
+        "order": 2,
+        "group": "DOCKER"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://json.schemastore.org/lefthook.json
+
+# lefthook.yml
+assert_lefthook_installed: true
+
+pre-commit:
+  parallel: false
+  commands:
+    prettier:
+      tags: prettier
+      glob: '*.{ts,js,json,yml,md}'
+      run: npx -y prettier -w -- {staged_files}
+    eslint:
+      tags: eslint
+      glob: '*.{ts,js}'
+      run: npx -y eslint --fix --no-error-on-unmatched-pattern --file {staged_files}

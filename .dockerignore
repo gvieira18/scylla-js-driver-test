@@ -1,0 +1,13 @@
+.husky/
+.vscode/
+node_modules/
+dist/
+coverage/
+
+.editorconfig
+.eslintrc.json
+.nvmrc
+.prettierrc
+
+README.md
+LICENSE
