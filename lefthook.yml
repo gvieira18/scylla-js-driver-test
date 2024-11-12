@@ -13,4 +13,4 @@ pre-commit:
     eslint:
       tags: eslint
       glob: '*.{ts,js}'
-      run: npx -y eslint --fix --no-error-on-unmatched-pattern --file {staged_files}
+      run: npx -y eslint --fix --no-error-on-unmatched-pattern {staged_files}
