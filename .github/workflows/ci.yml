@@ -19,6 +19,8 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Setup environment
+        run: docker compose -f docker-compose.environment.yml up -d
       - name: Check audit
         run: npm run audit
       - name: Check lint
@@ -27,3 +29,6 @@ jobs:
           npm run format
       - name: Run tests
         run: npm run test
+      - name: Tear down environment
+        if: always()
+        run: docker compose -f docker-compose.environment.yml down

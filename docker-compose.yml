@@ -1,13 +1,13 @@
 version: '3.8'
 
 services:
-  ts-node-archref:
+  scylla-js-driver-test:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: ts-node-archref
-    image: ts-node-archref:dev
-    hostname: ts-node-archref
+    container_name: scylla-js-driver-test
+    image: scylla-js-driver-test:dev
+    hostname: scylla-js-driver-test
     tty: true
     environment:
       - COLORTERM=truecolor
@@ -19,8 +19,8 @@ services:
       - 5000:9229
       - 3000:3000
     networks:
-      - ts-node-archref
+      - scylla-js-driver-test
 networks:
-  ts-node-archref:
-    name: ts-node-archref
+  scylla-js-driver-test:
+    name: scylla-js-driver-test
     driver: bridge
