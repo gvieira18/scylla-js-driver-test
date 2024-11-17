@@ -7,10 +7,12 @@ pre-commit:
   parallel: false
   commands:
     prettier:
+      stage_fixed: true
       tags: prettier
       glob: '*.{ts,js,json,yml,md}'
       run: npx -y prettier -w -- {staged_files}
     eslint:
+      stage_fixed: true
       tags: eslint
       glob: '*.{ts,js}'
       run: npx -y eslint --fix --no-error-on-unmatched-pattern {staged_files}

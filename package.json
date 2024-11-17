@@ -1,6 +1,6 @@
 {
   "name": "@gvieira18/scylla-js-driver-test",
-  "version": "0.0.60",
+  "version": "0.0.61",
   "description": "NodeJS using Typescript",
   "private": true,
   "main": "dist/main.js",
