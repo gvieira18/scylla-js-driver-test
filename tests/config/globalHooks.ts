@@ -1,15 +1,15 @@
-import scylladb from './contexts/scylladb';
+import ScyllaDriver from './contexts/ScyllaDriver';
 
 const keyspaceName = 'feature_test';
 
 beforeAll(async () => {
-  await scylladb.client.execute(
+  await ScyllaDriver.client.execute(
     `CREATE KEYSPACE IF NOT EXISTS ${keyspaceName} WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 1}`
   );
 
-  await scylladb.client.useKeyspace(keyspaceName);
+  await ScyllaDriver.client.useKeyspace(keyspaceName);
 });
 
 afterAll(async () => {
-  await scylladb.client.execute(`DROP KEYSPACE IF EXISTS ${keyspaceName}`);
+  await ScyllaDriver.client.execute(`DROP KEYSPACE IF EXISTS ${keyspaceName}`);
 });
